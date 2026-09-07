@@ -271,7 +271,7 @@
     </section>
     <section class="section about" id="about" aria-labelledby="about-title">
       <div class="container about-grid">
-        <div class="about-heading"><p class="section-label mono"><span>02 /</span> BEHIND THE TIMELINE</p><h2 id="about-title">A good edit<br>makes you<br><em style="font-family:Georgia,serif;font-weight:400;color:var(--accent)">feel something.</em></h2><p class="about-mark" data-name>Your Name</p></div>
+        <div class="about-heading"><p class="section-label mono"><span>02 /</span> BEHIND THE TIMELINE</p><h2 id="about-title">A good edit<br>makes you<br><em style="font-family:Georgia,serif;font-weight:400;color:var(--accent)">feel something.</em></h2><p class="about-mark" data-name>Peshal Kaphle</p></div>
         <div><p class="about-copy" id="about-copy"></p><div class="details-row"><div><p class="detail-label mono">WHAT I DO</p><p class="detail-value" id="specialty">Video editing &amp; storytelling</p></div><div id="location-block"><p class="detail-label mono">BASED IN</p><p class="detail-value" id="location"></p></div></div><div class="tools" id="tools" aria-label="Editing tools"></div></div>
       </div>
     </section>
@@ -280,7 +280,7 @@
       <div class="contact-top"><div><h2 id="contact-title">Have a story?<br>Let&apos;s make it <em>move.</em></h2><div class="email-row"><a class="email-text" id="email-link" href="#contact">Add your contact email</a><button class="icon-button" id="copy-email" type="button" aria-label="Copy email address" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 7V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h3"/></svg></button></div><div class="social-links" id="social-links"></div></div><div class="contact-aside"><p id="contact-copy">Tell me what you&apos;re making, what it should feel like, and where you want it to go.</p><a class="button" id="contact-button" href="#contact">Start a conversation <span class="arrow" aria-hidden="true">&#8599;</span></a><p class="contact-note" id="contact-note">Connect your email in Edit portfolio.</p></div></div>
     </section>
   </main>
-  <footer><div class="container footer-inner"><span>&copy; <span id="year"></span> <span data-name>Your Name</span>. <span id="footer-note">Portfolio starter.</span></span><span class="mono">MADE WITH INTENTION.</span><a href="#top">Back to top &#8593;</a></div></footer>
+  <footer><div class="container footer-inner"><span>&copy; <span id="year"></span> <span data-name>Peshal Kaphle</span>. <span id="footer-note">Portfolio starter.</span></span><span class="mono">MADE WITH INTENTION.</span><a href="#top">Back to top &#8593;</a></div></footer>
   <button class="edit-launcher" id="edit-launcher" type="button" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 14l-1 4 4-1L17 6l-3-3L3 14zM12 5l3 3"/></svg>Edit portfolio</button>
   <div class="toast" id="toast" role="status" hidden></div>
   <dialog class="video-dialog" id="video-dialog" aria-labelledby="video-title">
@@ -295,14 +295,14 @@
         <p class="editor-intro">Add your details and real work below. Apply changes to preview, then download the updated website to keep them. Nothing is uploaded or published by this editor.</p>
         <h3>01 / Your identity</h3>
         <div class="form-grid">
-          <label class="field">Your name<input name="name" autocomplete="name" required maxlength="70" placeholder="Your name"></label>
+          <label class="field">Peshal Kaphle<input name="name" autocomplete="name" required maxlength="70" placeholder="Peshal Kaphle"></label>
           <label class="field">Professional title<input name="role" maxlength="80" placeholder="Video Editor"></label>
           <label class="field">Email for project inquiries<input name="email" type="email" autocomplete="email" maxlength="160" placeholder="you@example.com"><small>Leave blank to keep contact email disconnected.</small></label>
           <label class="field">Location (optional)<input name="location" maxlength="80" placeholder="City, country / working remotely"></label>
           <label class="field">Headline, line 1<input name="headline1" required maxlength="55"></label>
           <label class="field">Headline, line 2<input name="headline2" required maxlength="55"></label>
           <label class="field full">Short introduction<textarea name="intro" maxlength="450"></textarea></label>
-          <label class="field full">About you<textarea name="about" maxlength="2500" style="min-height:130px"></textarea><small>Use {name} where you want your name to appear automatically. Only list experience and skills that are yours.</small></label>
+          <label class="field full">About you<textarea name="about" maxlength="2500" style="min-height:130px"></textarea><small>Use {name} where you want Peshal Kaphle to appear automatically. Only list experience and skills that are yours.</small></label>
           <label class="field">Specialties<input name="specialty" maxlength="200" placeholder="e.g. YouTube videos and social content"></label>
           <label class="field">Your editing software (optional)<input name="tools" maxlength="300" placeholder="List your tools, separated by commas"></label>
         </div>
@@ -328,7 +328,7 @@
   <!-- EDITABLE CONTENT: use the Edit portfolio button, or edit this JSON directly. -->
   <script type="application/json" id="portfolio-data">
   {
-    "name": "Your Name",
+    "name": "Peshal Kaphle",
     "role": "Video Editor",
     "email": "",
     "location": "",
@@ -433,13 +433,13 @@
       return email ? 'mailto:' + encodeURIComponent(email).replace(/%40/g,'@') + '?subject=' + encodeURIComponent('Video editing project inquiry') : '#contact';
     }
     function render() {
-      document.querySelectorAll('[data-name]').forEach(node => node.textContent = data.name || 'Your Name');
+      document.querySelectorAll('[data-name]').forEach(node => node.textContent = data.name || 'Peshal Kaphle');
       document.querySelectorAll('[data-role]').forEach(node => node.textContent = data.role || 'Video Editor');
-      document.title = (data.name || 'Your Name') + ' | ' + (data.role || 'Video Editor');
-      document.querySelector('meta[name="description"]').content = (data.name || 'Your Name') + ' - ' + (data.role || 'Video Editor') + '. ' + (data.intro || 'Explore selected work and get in touch.');
+      document.title = (data.name || 'Peshal Kaphle') + ' | ' + (data.role || 'Video Editor');
+      document.querySelector('meta[name="description"]').content = (data.name || 'Peshal Kaphle') + ' - ' + (data.role || 'Video Editor') + '. ' + (data.intro || 'Explore selected work and get in touch.');
       text('eyebrow', (data.role || 'Video Editor') + ' & storyteller');
       text('headline-1', data.headline1); text('headline-2', data.headline2); text('hero-copy', data.intro);
-      text('about-copy', (data.about || '').split('{name}').join(data.name || 'Your Name'));
+      text('about-copy', (data.about || '').split('{name}').join(data.name || 'Peshal Kaphle'));
       text('specialty',data.specialty || data.role); text('location',data.location); $('location-block').hidden = !data.location;
       $('tools').replaceChildren();
       (data.tools || []).forEach(tool => { const el = document.createElement('span'); el.className='tool'; el.textContent=tool; $('tools').append(el); });
@@ -634,7 +634,7 @@
       if(!form.reportValidity())return null;
       const values=new FormData(form);const next={...data};
       ['name','role','email','location','headline1','headline2','intro','about','specialty','showreel','showreelPoster'].forEach(key=>next[key]=String(values.get(key)||'').trim());
-      if(!next.name||!next.headline1||!next.headline2){text('editor-status','Enter your name and both headline lines.');return null;}
+      if(!next.name||!next.headline1||!next.headline2){text('editor-status','Enter Peshal Kaphle and both headline lines.');return null;}
       next.tools=String(values.get('tools')||'').split(',').map(s=>s.trim()).filter(Boolean);next.draft=!!values.get('draft');next.socials={};
       for(const key of Object.keys(socialNames)){
         const value=String(values.get(key)||'').trim();if(value&&!secureUrl(value)){text('editor-status','Use a complete https:// link for '+socialNames[key]+'.');form.elements[key].focus();return null;}next.socials[key]=value;
