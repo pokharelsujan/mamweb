@@ -8,7 +8,7 @@
   <title>Peshal Kaphle | Video Editor</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23d5f58a'/%3E%3Cpath d='M18 16h13L18 48H5zm28 0h13L46 48H33z' fill='%23111411'/%3E%3C/svg%3E">
   <style>
-    :root{--bg:#111411;--panel:#191d18;--ink:#f0f1e9;--muted:#a3aa9e;--line:#343b30;--accent:#d5f58a;--dark:#1c2411;--radius:12px;--sans:Arial,Helvetica,sans-serif;--mono:"Courier New",monospace;--max:1280px}
+    :root{--bg:#111411;--panel:#191d18;--ink:#f0f1e9;--muted:#a3aa9e;--line:#343b30;--accent:#d5f58a;--dark:#1c2411;--radius:12px;--sans:Arial,Helvetica,sans-serif;--mono:"Courier New",monospace;--max:1200px}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:105px}
     body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -56,7 +56,7 @@
     .hero h1 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--accent);letter-spacing:-.067em;font-size:1.03em}
     .hero-copy{font-size:15px;line-height:1.8;max-width:350px;color:var(--muted);margin-bottom:29px}
     .hero-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap}
-    .button{display:inline-flex;align-items:center;justify-content:center;gap:24px;background:var(--accent);color:var(--dark);border:1px solid var(--accent);border-radius:100px;padding:14px 23px;font-size:13px;font-weight:700;min-height:48px;transition:background .2s,transform .2s;text-align:center}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:24px;background:var(--accent);color:var(--dark);border:1px solid var(--accent);border-radius:100px;padding:14px 23px;font-weight:700}
     .button:hover{background:#e0ffa1;transform:translateY(-2px)}
     .button.secondary{background:transparent;color:var(--ink);border-color:#48523f}
     .button.secondary:hover{background:#22291d}
@@ -66,19 +66,19 @@
     .reel:focus-visible{outline-offset:7px}
     .reel-scene{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 75% 18%,#a1b480 0%,#738b5c 24%,#3f5538 45%,#1c2b21 80%)}
     .reel-sun{position:absolute;width:220px;height:220px;right:-9px;top:-44px;border-radius:50%;background:linear-gradient(140deg,#edf0cc,#a4b77d);filter:blur(.4px);opacity:.9}
-    .reel-mountain{position:absolute;bottom:-1px;left:-8%;height:82%;width:122%;background:linear-gradient(115deg,#324437,#101f19 74%);clip-path:polygon(0 89%,17% 37%,29% 61%,47% 10%,75% 77%,87% 46%,100% 100%,0 100%)}
-    .reel-ridge{position:absolute;bottom:-1px;left:0;height:59%;width:100%;background:linear-gradient(115deg,#74805a,#243c2b 44%,#14251c);clip-path:polygon(0 64%,20% 12%,27% 29%,40% 59%,57% 42%,70% 71%,100% 93%,100% 100%,0 100%)}
+    .reel-mountain{position:absolute;bottom:-1px;left:-8%;height:82%;width:122%;background:linear-gradient(115deg,#324437,#101f19 74%);clip-path:polygon(0 89%,17% 37%,29% 61%,47% 10%,75% 77%,87% 46%,100% 88%,100% 100%,0 100%)}
+    .reel-ridge{position:absolute;bottom:-1px;left:0;height:59%;width:100%;background:linear-gradient(115deg,#74805a,#243c2b 44%,#14251c);clip-path:polygon(0 64%,20% 12%,27% 29%,40% 59%,57% 42%,70% 71%,100% 43%,100% 100%,0 100%)}
     .reel-grid{position:absolute;inset:25px;border:1px solid rgba(245,255,225,.2)}
     .reel-grid:before,.reel-grid:after{content:"";position:absolute;background:rgba(245,255,225,.15)}
     .reel-grid:before{width:1px;top:0;bottom:0;left:50%}
     .reel-grid:after{height:1px;left:0;right:0;top:50%}
     .reel-word{position:absolute;left:36px;top:49px;font-size:70px;line-height:.83;letter-spacing:-.065em;font-weight:800;color:#f2f3db;opacity:.91}
     .reel-word span{font-family:Georgia,serif;font-style:italic;font-weight:400}
-    .play-circle{position:absolute;inset:0;margin:auto;width:68px;height:68px;border:1px solid rgba(242,255,217,.75);border-radius:50%;background:rgba(21,30,16,.38);backdrop-filter:blur(8px);display:grid;place-items:center;transition:transform .3s,background .3s}
+    .play-circle{position:absolute;inset:0;margin:auto;width:68px;height:68px;border:1px solid rgba(242,255,217,.75);border-radius:50%;background:rgba(21,30,16,.38);backdrop-filter:blur(8px);display:grid;place-items:center;transition:transform .2s,background .2s}
     .play-circle svg{width:20px;height:20px;margin-left:4px;fill:#f1f3e9}
     .reel:hover .play-circle{transform:scale(1.1);background:rgba(31,47,19,.7)}
-    .reel-tag{position:absolute;top:13px;right:13px;background:rgba(17,20,17,.65);color:#edf5dc;border:1px solid rgba(219,242,181,.27);border-radius:3px;padding:4px 7px;font-size:8px;letter-spacing:.09em}
-    .reel-bottom{position:absolute;bottom:39px;left:38px;right:38px;display:flex;justify-content:space-between;gap:10px;align-items:center;font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:#e5ecd9}
+    .reel-tag{position:absolute;top:13px;right:13px;background:rgba(17,20,17,.65);color:#edf5dc;border:1px solid rgba(219,242,181,.27);border-radius:3px;padding:4px 7px;font-size:8px;letter-spacing:.04em}
+    .reel-bottom{position:absolute;bottom:39px;left:38px;right:38px;display:flex;justify-content:space-between;gap:10px;align-items:center;font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:#f2f3de}
     .reel-bottom .small-play{width:5px;height:5px;background:var(--accent);display:inline-block;margin-right:6px;border-radius:50%}
     .reel-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .reel.has-cover:after{position:absolute;content:"";inset:50% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.55));pointer-events:none}
@@ -108,8 +108,8 @@
     .poster-image{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s}
     .project-button:hover .poster-image{transform:scale(1.035)}
     .poster:after{content:"";position:absolute;inset:65% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.28));pointer-events:none}
-    .sample-label{position:absolute;top:16px;left:16px;z-index:2;background:rgba(16,21,13,.65);border:1px solid rgba(245,250,235,.3);color:#f4f5eb;border-radius:3px;padding:4px 7px;font-size:8px;letter-spacing:.1em;font-family:var(--mono)}
-    .project-play{position:absolute;right:18px;bottom:18px;width:43px;height:43px;display:grid;place-items:center;border:1px solid rgba(240,249,225,.5);border-radius:50%;background:rgba(16,21,13,.45);backdrop-filter:blur(6px);transition:background .2s;z-index:2}
+    .sample-label{position:absolute;top:16px;left:16px;z-index:2;background:rgba(16,21,13,.65);border:1px solid rgba(245,250,235,.3);color:#f4f5eb;border-radius:3px;padding:4px 7px;font-size:8px;letter-spacing:.08em}
+    .project-play{position:absolute;right:18px;bottom:18px;width:43px;height:43px;display:grid;place-items:center;border:1px solid rgba(240,249,225,.5);border-radius:50%;background:rgba(16,21,13,.45);transition:background .2s}
     .project-play svg{width:13px;height:13px;fill:#f6f7ef;margin-left:2px}
     .project-button:hover .project-play{background:#34452a}
     .art{position:absolute;inset:0;overflow:hidden;transition:transform .5s;pointer-events:none}
@@ -124,21 +124,21 @@
     .art-brand{background:#e9e5da}
     .art-brand .art-type{left:27px;top:21%;font-size:clamp(32px,4.7vw,69px);letter-spacing:-.075em;font-weight:700;line-height:.93;color:#293323}
     .art-brand .art-mini{color:#394530}
-    .art-brand:before{content:"";position:absolute;top:-15%;right:-11%;height:137%;width:62%;border:clamp(30px,6vw,78px) solid #849665;border-radius:50%;transform:rotate(-28deg);box-shadow:13px 10px 28px rgba(28,43,16,.17),inset 10px 15px 30px #b6b7a6}
-    .art-brand:after{content:"";position:absolute;top:39%;right:16%;width:14%;height:44%;background:linear-gradient(90deg,#111f15,#334a30,#0f2016);border-radius:12px 12px 17px 17px;transform:rotate(16deg);box-shadow:14px 15px 17px rgba(26,43,21,.25)}
+    .art-brand:before{content:"";position:absolute;top:-15%;right:-11%;height:137%;width:62%;border:clamp(30px,6vw,78px) solid #849665;border-radius:50%;transform:rotate(-28deg);box-shadow:13px 10px 28px rgba(0,0,0,.08)}
+    .art-brand:after{content:"";position:absolute;top:39%;right:16%;width:14%;height:44%;background:linear-gradient(90deg,#111f15,#334a30,#0f2016);border-radius:12px 12px 17px 17px;transform:rotate(16deg)}
     .art-social{background:#cae785}
     .art-social .art-type{top:13%;left:23px;font-size:clamp(47px,6.6vw,91px);line-height:.85;font-weight:800;letter-spacing:-.065em;color:#1e2a16;transform:rotate(-7deg)}
-    .art-social:before{content:"";position:absolute;right:15%;top:16%;width:27%;height:84%;border:7px solid #182014;border-radius:25px;background:radial-gradient(circle at 72% 33%,#bbc59c 2%,#69875b 39%,#20372c 77%);box-shadow:20px 28px 25px rgba(21,46,11,.25);transform:rotate(14deg);z-index:1}
+    .art-social:before{content:"";position:absolute;right:15%;top:16%;width:27%;height:84%;border:7px solid #182014;border-radius:25px;background:radial-gradient(circle at 72% 33%,#bbc59c 2%,#69875b 34%,#344b31 70%,#151b13 100%)}
     .art-social:after{content:"";position:absolute;right:17%;top:53%;height:20%;width:18%;background:#dceb9e;clip-path:polygon(0 100%,47% 0,100% 100%);transform:rotate(14deg);z-index:1}
     .art-social .art-mini{color:#253419;bottom:19px}
     .art-youtube{background:radial-gradient(ellipse at 76% 35%,#847c9b,#443b55 55%,#241e2c)}
-    .art-youtube:before{content:"";position:absolute;right:6%;top:15%;width:48%;height:110%;border:37px solid #aea1bc;border-radius:45%;transform:rotate(30deg);box-shadow:9px 5px 15px rgba(0,0,0,.25),inset 6px 6px 15px rgba(0,0,0,.3)}
+    .art-youtube:before{content:"";position:absolute;right:6%;top:15%;width:48%;height:110%;border:37px solid #aea1bc;border-radius:45%;transform:rotate(30deg);box-shadow:9px 5px 15px rgba(0,0,0,.25),inset 0 0 40px rgba(255,255,255,.1)}
     .art-youtube .art-type{top:23%;left:28px;font-size:clamp(40px,5.5vw,78px);line-height:.86;font-weight:700;letter-spacing:-.075em;color:#f2eaf3}
     .art-youtube .art-mini{color:#ded0e6}
     .project-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-top:15px}
     .project-title{font-size:17px;line-height:1.4;letter-spacing:-.02em;font-weight:400;margin-bottom:4px;overflow-wrap:anywhere}
     .project-role{font-size:11px;color:var(--muted);line-height:1.6;margin:0;overflow-wrap:anywhere}
-    .category-tag{font-family:var(--mono);font-size:9px;letter-spacing:.025em;padding:5px 9px;border:1px solid #3d4635;border-radius:100px;color:#b6c2aa;flex-shrink:0;max-width:40%;overflow-wrap:anywhere;text-align:center}
+    .category-tag{font-family:var(--mono);font-size:9px;letter-spacing:.025em;padding:5px 9px;border:1px solid #3d4635;border-radius:100px;color:#b6c2aa;flex-shrink:0;max-width:40%;overflow-wrap:anywhere}
     .work-foot{display:flex;justify-content:space-between;gap:25px;align-items:center;color:#849077;font-size:10px;padding-top:30px}
     .empty-work{padding:45px;border:1px dashed var(--line);color:var(--muted);grid-column:1/-1;border-radius:10px;text-align:center}
     .about{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(140deg,#171c14,#111411 70%)}
@@ -168,9 +168,9 @@
     footer{border-top:1px solid var(--line);padding:24px 0 29px;color:#88977c}
     .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:25px;font-size:10px;flex-wrap:wrap}
     .footer-inner a{color:#b8c6aa}
-    .edit-launcher{position:fixed;bottom:19px;left:20px;z-index:20;background:#eef4df;color:#17200e;border:1px solid #9aa98c;border-radius:100px;box-shadow:0 6px 30px #0007;padding:11px 17px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px}
+    .edit-launcher{position:fixed;bottom:19px;left:20px;z-index:20;background:#eef4df;color:#17200e;border:1px solid #9aa98c;border-radius:100px;box-shadow:0 6px 30px #0007;padding:11px 17px;font-size:12px;display:flex;align-items:center;gap:9px}
     .edit-launcher svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8}
-    .toast{position:fixed;bottom:24px;right:24px;z-index:60;max-width:min(370px,calc(100% - 48px));border:1px solid #627447;background:#26351b;color:#eff5e7;padding:14px 18px;border-radius:10px;font-size:13px;box-shadow:0 6px 30px #0005}
+    .toast{position:fixed;bottom:24px;right:24px;z-index:60;max-width:min(370px,calc(100% - 48px));border:1px solid #627447;background:#26351b;color:#eff5e7;padding:14px 18px;border-radius:10px;font-size:12px}
     dialog{color:var(--ink);background:#191e16;border:1px solid #47543a;border-radius:16px;padding:0;max-height:90vh;max-height:90dvh;box-shadow:0 22px 80px #0009;overscroll-behavior:contain}
     dialog::backdrop{background:rgba(4,9,4,.86);backdrop-filter:blur(6px)}
     .video-dialog{width:min(960px,calc(100% - 36px))}
@@ -213,12 +213,12 @@
     .image-field-row input{flex:1;min-width:0}
     .clear-image{font-size:10px;padding:7px;background:transparent;color:#aebea0;border:1px solid #46543a;border-radius:4px}
     @media(min-width:1600px){.hero h1{font-size:106px}.art-film .art-type{font-size:68px}.art-brand .art-type{font-size:69px}.art-social .art-type{font-size:91px}.art-youtube .art-type{font-size:78px}}
-    @media(max-width:1100px){.container{width:calc(100% - 64px)}.hero-grid{gap:30px}.hero h1{font-size:clamp(60px,7.4vw,86px)}.reel{height:340px}.reel-word{font-size:63px}.about-grid{gap:45px}.nav-links{gap:25px}}
-    @media(max-width:800px){.hero{padding-top:46px}.hero-grid{grid-template-columns:1fr 1fr;gap:23px}.hero h1{font-size:63px}.hero-copy{font-size:13px}.hero-actions{gap:15px}.button{padding:12px 19px}.reel{height:326px}.reel-word{left:25px;font-size:52px}.reel-grid{inset:17px}.reel-bottom{left:25px;right:25px;font-size:8px;bottom:31px}.hero-index{display:none}.timeline .timeline-end{display:none}.timeline span{font-size:8px}.timeline b{margin-right:6px}.section{padding-block:54px}.about-grid{gap:30px}.about-copy{font-size:14px}.contact-top{gap:35px}.contact-aside{max-width:190px}.contact h2{font-size:61px}.work-grid{gap:24px 19px}.project-title{font-size:15px}.section-top{gap:25px}.section-intro{max-width:235px;font-size:12px}}
-    @media(max-width:650px){html{scroll-padding-top:90px}.container{width:calc(100% - 40px)}.draft-note{font-size:9px;padding:8px 17px}.nav-wrap{min-height:73px;gap:16px}.brand-name{font-size:13px;max-width:180px}.brand-role{font-size:8px}.brand-icon{width:31px;height:31px;flex-basis:31px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;left:0;right:0;top:100%;background:#191e16;padding:16px 21px 22px;border-bottom:1px solid #4a563e;gap:5px;flex-direction:column;align-items:stretch}.nav-links.is-open{display:flex}.nav-links>a{padding:12px 9px}.nav-links>a.contact-nav{margin-top:5px;justify-content:space-between}.hero{padding-top:38px;padding-bottom:26px}.hero-top{margin-bottom:22px}.eyebrow{font-size:9px}.hero-grid{grid-template-columns:1fr;gap:33px}.hero h1{font-size:clamp(64px,14.1vw,91px);margin-bottom:20px;line-height:.98}.hero-copy{font-size:14px;max-width:350px;margin-bottom:21px}.hero-actions{gap:24px}.reel-wrap{padding-top:0}.reel{height:auto;aspect-ratio:4/3}.reel-word{font-size:clamp(57px,15.1vw,90px);left:30px;top:46px}.reel-sun{width:190px;height:190px}.reel-grid{inset:20px}.reel-bottom{left:30px;right:30px;bottom:33px;font-size:8px}.reel-caption{font-size:9px}.timeline{margin-top:30px;padding-top:18px;gap:12px}.timeline span{font-size:7px;letter-spacing:0}.timeline b{margin-right:3px}.section{padding-top:42px;padding-bottom:46px}.section-label{font-size:9px}.section-top{display:block;margin-bottom:23px}.section h2{font-size:40px}.section-intro{margin-top:17px;max-width:330px;font-size:13px}.filters{gap:6px;margin-bottom:23px;padding-top:20px}.filter{padding:8px 11px;font-size:10px}.filter-count{font-size:9px;margin-left:5px}.work-grid{grid-template-columns:1fr;gap:27px}.poster{aspect-ratio:16/10}.art-film .art-type{font-size:clamp(47px,12vw,73px)}.art-brand .art-type{font-size:clamp(47px,12vw,73px)}.art-social .art-type{font-size:clamp(67px,17vw,102px)}.art-youtube .art-type{font-size:clamp(55px,14.2vw,85px)}.art-brand:before{border-width:53px}.project-title{font-size:17px}.project-role{font-size:11px}.category-tag{font-size:9px}.work-foot{font-size:9px;gap:20px;align-items:flex-start}.about-grid{grid-template-columns:1fr;gap:26px}.about-heading{max-width:350px}.about-heading h2{font-size:43px;margin-bottom:16px}.about-mark{font-size:34px}.about-copy{font-size:14px;margin-bottom:20px}.detail-label{font-size:9px}.detail-value{font-size:12px}.contact{padding-top:48px;padding-bottom:44px}.contact-top{display:block}.contact h2{font-size:clamp(48px,11.5vw,70px);margin-bottom:19px}.contact-aside{max-width:330px;padding-top:25px}.contact-aside p{font-size:13px}.contact-note{font-size:9px}.email-text{font-size:14px}.email-row{margin-top:22px}footer{padding:21px 0 76px}.footer-inner{font-size:9px;gap:14px}.edit-launcher{left:13px;bottom:13px;font-size:11px;padding:10px 14px}.video-stage{aspect-ratio:auto;min-height:230px}.video-stage:has(iframe),.video-stage:has(video){aspect-ratio:16/9;min-height:200px}.video-info{flex-direction:column;gap:13px}.empty-video{padding:27px 18px}.empty-video h3{font-size:21px}.dialog-bar{padding:15px 17px}.dialog-bar h2{font-size:14px}.editor-body{padding:18px}.form-grid{grid-template-columns:1fr;gap:13px}.field.full{grid-column:auto}.editor .dialog-bar{padding:15px 18px}.editor-actions{padding:13px 18px;gap:8px}.editor-actions .button{padding:10px 14px;font-size:11px;min-height:42px}.project-fields{padding:13px}.toast{bottom:65px;right:15px;max-width:calc(100% - 30px)}}
-    @media(max-width:360px){.hero h1{font-size:60px}.hero-actions{gap:18px}.hero-actions .button{padding-inline:17px}.timeline{gap:7px}.timeline span{font-size:6.5px}.brand-name{max-width:140px}.reel-word{font-size:53px}.contact h2{font-size:47px}.category-tag{font-size:8px}.project-title{font-size:16px}}
+    @media(max-width:1100px){.container{width:calc(100% - 64px)}.hero-grid{gap:30px}.hero h1{font-size:clamp(60px,7.4vw,86px)}.reel{height:340px}.reel-word{font-size:63px}.about-grid{gap:45px}.nav-links{gap:22px}.work-grid{gap:24px 18px}.contact-top{gap:32px}}
+    @media(max-width:800px){.hero{padding-top:46px}.hero-grid{grid-template-columns:1fr 1fr;gap:23px}.hero h1{font-size:63px}.hero-copy{font-size:13px}.hero-actions{gap:15px}.button{padding:12px 19px}.work-grid,.about-grid,.form-grid{grid-template-columns:1fr}.section-top,.contact-top,.hero-top,.footer-inner{flex-direction:column;align-items:flex-start}.nav-links{display:none}.menu-toggle{display:inline-flex}.nav-links.is-open{display:flex;flex-direction:column;align-items:flex-start;gap:18px;position:absolute;right:24px;top:84px;background:#141814;border:1px solid #34402c;border-radius:14px;padding:18px 20px;width:min(260px,calc(100vw - 48px))}.nav-links>a.contact-nav{width:100%;justify-content:space-between}.hero-grid{grid-template-columns:1fr}.about-heading{max-width:none}.contact-aside{max-width:none;padding-top:0}.editor-body{padding:20px}.editor-actions{padding:16px 20px}.dialog-bar{padding-inline:18px}}
+    @media(max-width:650px){html{scroll-padding-top:90px}.container{width:calc(100% - 40px)}.draft-note{font-size:9px;padding:8px 17px}.nav-wrap{min-height:73px;gap:16px}.brand-name{font-size:13px;max-width:180px}.brand-role{font-size:8px}.hero h1{font-size:56px}.hero-copy{max-width:none}.hero-actions{width:100%}.button,.text-link{width:100%;justify-content:center}.reel{height:300px}.timeline{gap:12px}.work-foot,.email-row{flex-direction:column;align-items:flex-start}.project-meta{align-items:flex-start}.category-tag{max-width:none}.edit-launcher{left:14px;bottom:14px}.toast{right:14px;bottom:14px;max-width:calc(100% - 28px)}.video-info{flex-direction:column}.video-dialog,.editor{width:calc(100% - 20px)}.dialog-bar h2{font-size:14px}.close-dialog{width:32px;height:32px}}
+    @media(max-width:360px){.hero h1{font-size:60px}.hero-actions{gap:18px}.hero-actions .button{padding-inline:17px}.timeline{gap:7px}.timeline span{font-size:6.5px}.brand-name{max-width:140px}.reel-word{font-size:55px}.contact h2{font-size:44px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
-    @media print{header,.edit-launcher,.draft-note,.filters,dialog,.toast{display:none!important}body{background:#fff;color:#111}.container{width:100%}.hero h1 em,.contact h2 em{color:#444}.hero,.section{padding:20px 0}.work-grid{grid-template-columns:1fr 1fr}.project{break-inside:avoid}.contact{break-before:page}}
+    @media print{header,.edit-launcher,.draft-note,.filters,dialog,.toast{display:none!important}body{background:#fff;color:#111}.container{width:100%}.hero h1 em,.contact h2 em{color:#444}.hero,.section{padding-block:24px}.about{background:#fff;border-color:#ddd}}
   </style>
 </head>
 <body id="top">
@@ -232,7 +232,7 @@
       </a>
       <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <nav class="nav-links" id="nav-links" aria-label="Main navigation">
-        <a href="#work">Selected work</a><a href="#about">About me</a><a class="contact-nav" href="#contact">Let&apos;s talk <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        <a href="#work">Selected work</a><a href="#about">About me</a><a class="contact-nav" href="#contact">Let&apos;s talk <span class="arrow" aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
@@ -246,24 +246,24 @@
         <div>
           <h1 id="hero-title"><span id="headline-1">Every frame.</span><span><em id="headline-2">A feeling.</em></span></h1>
           <p class="hero-copy" id="hero-copy">Good footage deserves a great story. I bring rhythm, intention, and a little edge to the edit.</p>
-          <div class="hero-actions"><a class="button" href="#work">Explore my work <span class="arrow" aria-hidden="true">&#8599;</span></a><button class="text-link" id="showreel-button" style="background:none;border-top:0;border-left:0;border-right:0" type="button"><span id="reel-cta">Showreel preview</span><span aria-hidden="true">&#9655;</span></button></div>
+          <div class="hero-actions"><a class="button" href="#work">Explore my work <span class="arrow" aria-hidden="true">↗</span></a><button class="text-link" id="showreel-button" style="background:none;border:0;padding:0">Showreel preview</button></div>
         </div>
         <div class="reel-wrap">
           <button class="reel" id="hero-reel" type="button" aria-label="Preview the showreel placeholder">
-            <span class="reel-scene" aria-hidden="true"><span class="reel-sun"></span><span class="reel-mountain"></span><span class="reel-ridge"></span><span class="reel-grid"></span><span class="reel-word">BEYOND<br>the <span>frame.</span></span></span>
+            <span class="reel-scene" aria-hidden="true"><span class="reel-sun"></span><span class="reel-mountain"></span><span class="reel-ridge"></span><span class="reel-grid"></span><span class="reel-word">THE <span>REEL</span></span></span>
             <img class="reel-cover" id="reel-cover" alt="" hidden>
             <span class="reel-tag mono" id="reel-tag">TEMPLATE ARTWORK</span>
             <span class="play-circle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></span>
             <span class="reel-bottom"><span><span class="small-play"></span>THE SHOWREEL</span><span id="reel-time">YOUR BEST MOMENTS</span></span>
           </button>
-          <div class="reel-caption mono"><strong id="reel-caption">Your showreel belongs here</strong><span id="reel-caption-note">ADD YOUR VIDEO &#8599;</span></div>
+          <div class="reel-caption mono"><strong id="reel-caption">Your showreel belongs here</strong><span id="reel-caption-note">ADD YOUR VIDEO ↗</span></div>
         </div>
       </div>
-      <div class="timeline mono" aria-label="An editing philosophy"><span><b>01</b> FIND THE STORY</span><span><b>02</b> BUILD THE RHYTHM</span><span><b>03</b> MAKE IT FEEL</span><span class="timeline-end"><i class="timeline-line" aria-hidden="true"></i> FRAME BY FRAME</span></div>
+      <div class="timeline mono" aria-label="An editing philosophy"><span><b>01</b> FIND THE STORY</span><span><b>02</b> BUILD THE RHYTHM</span><span><b>03</b> MAKE IT FEEL</span><span class="timeline-end"><b class="timeline-line" aria-hidden="true"></b> EDIT WITH INTENTION</span></div>
     </section>
     <section class="section container" id="work" aria-labelledby="work-title">
       <p class="section-label mono"><span>01 /</span> SELECTED WORK</p>
-      <div class="section-top"><h2 id="work-title">The work.<br>Not just the cuts.</h2><p class="section-intro" id="work-intro">A selection of stories, shaped one frame at a time. Different formats. The same attention to feeling.</p></div>
+      <div class="section-top"><h2 id="work-title">The work.<br>Not just the cuts.</h2><p class="section-intro" id="work-intro">A selection of stories, shaped one frame at a time. Different formats. Different tones. Same focus: clarity, pacing, and emotion.</p></div>
       <div class="filters" id="filters" role="group" aria-label="Filter projects by category"></div>
       <p class="sr-only" id="filter-status" aria-live="polite"></p>
       <div class="work-grid" id="work-grid"></div>
@@ -271,26 +271,26 @@
     </section>
     <section class="section about" id="about" aria-labelledby="about-title">
       <div class="container about-grid">
-        <div class="about-heading"><p class="section-label mono"><span>02 /</span> BEHIND THE TIMELINE</p><h2 id="about-title">A good edit<br>makes you<br><em style="font-family:Georgia,serif;font-weight:400;color:var(--accent)">feel something.</em></h2><p class="about-mark" data-name>Peshal Kaphle</p></div>
-        <div><p class="about-copy" id="about-copy"></p><div class="details-row"><div><p class="detail-label mono">WHAT I DO</p><p class="detail-value" id="specialty">Video editing &amp; storytelling</p></div><div id="location-block"><p class="detail-label mono">BASED IN</p><p class="detail-value" id="location"></p></div></div><div class="tools" id="tools" aria-label="Editing tools"></div></div>
+        <div class="about-heading"><p class="section-label mono"><span>02 /</span> BEHIND THE TIMELINE</p><h2 id="about-title">A good edit<br>makes you<br><em style="font-family:Georgia,serif;font-style:italic;color:var(--accent)">feel</em>.</h2></div>
+        <div><p class="about-copy" id="about-copy"></p><div class="details-row"><div><p class="detail-label mono">WHAT I DO</p><p class="detail-value" id="specialty">Video editing &amp; storytelling</p></div><div id="location-block"><p class="detail-label mono">BASED IN</p><p class="detail-value" id="location"></p></div></div><div class="tools" id="tools"></div></div>
       </div>
     </section>
     <section class="section contact container" id="contact" aria-labelledby="contact-title">
       <p class="section-label mono"><span>03 /</span> YOUR NEXT STORY</p>
-      <div class="contact-top"><div><h2 id="contact-title">Have a story?<br>Let&apos;s make it <em>move.</em></h2><div class="email-row"><a class="email-text" id="email-link" href="#contact">Add your contact email</a><button class="icon-button" id="copy-email" type="button" aria-label="Copy email address" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 7V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h3"/></svg></button></div><div class="social-links" id="social-links"></div></div><div class="contact-aside"><p id="contact-copy">Tell me what you&apos;re making, what it should feel like, and where you want it to go.</p><a class="button" id="contact-button" href="#contact">Start a conversation <span class="arrow" aria-hidden="true">&#8599;</span></a><p class="contact-note" id="contact-note">Connect your email in Edit portfolio.</p></div></div>
+      <div class="contact-top"><div><h2 id="contact-title">Have a story?<br>Let&apos;s make it <em>move.</em></h2><div class="email-row"><a class="email-text" id="email-link" href="#contact">Add your contact email</a><button class="icon-button" id="copy-email" type="button" aria-label="Copy email"><svg viewBox="0 0 24 24"><path d="M9 9h10v10H9zM5 5h10v10H5z"/></svg></button></div><p class="contact-note" id="contact-note">Contact email not connected yet.</p><div class="social-links" id="social-links"></div></div><aside class="contact-aside"><p id="work-intro-2">Send your brief, a rough cut, or a simple hello. I’ll take it from there.</p><a class="button secondary" id="contact-button" href="#contact">Start a project</a></aside></div>
     </section>
   </main>
-  <footer><div class="container footer-inner"><span>&copy; <span id="year"></span> <span data-name>Peshal Kaphle</span>. <span id="footer-note">Portfolio starter.</span></span><span class="mono">MADE WITH INTENTION.</span><a href="#top">Back to top &#8593;</a></div></footer>
+  <footer><div class="container footer-inner"><span>&copy; <span id="year"></span> <span data-name>Peshal Kaphle</span>. <span id="footer-note">Portfolio starter.</span></span><span class="mono">MADE WITH INTENTION</span></div></footer>
   <button class="edit-launcher" id="edit-launcher" type="button" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 14l-1 4 4-1L17 6l-3-3L3 14zM12 5l3 3"/></svg>Edit portfolio</button>
   <div class="toast" id="toast" role="status" hidden></div>
   <dialog class="video-dialog" id="video-dialog" aria-labelledby="video-title">
-    <div class="dialog-bar"><h2 id="video-title">Showreel</h2><button class="close-dialog" type="button" id="close-video" aria-label="Close video">&#215;</button></div>
+    <div class="dialog-bar"><h2 id="video-title">Showreel</h2><button class="close-dialog" type="button" id="close-video" aria-label="Close video">×</button></div>
     <div class="video-stage" id="video-stage"></div>
-    <div class="video-info"><p id="video-description"></p><a id="video-original" target="_blank" rel="noopener noreferrer" hidden>Open original &#8599;</a></div>
+    <div class="video-info"><p id="video-description"></p><a id="video-original" target="_blank" rel="noopener noreferrer" hidden>Open original ↗</a></div>
   </dialog>
   <dialog class="editor" id="editor" aria-labelledby="editor-title">
     <form id="editor-form">
-      <div class="dialog-bar"><h2 id="editor-title">Make it your portfolio.</h2><button class="close-dialog" type="button" id="close-editor" aria-label="Close editor">&#215;</button></div>
+      <div class="dialog-bar"><h2 id="editor-title">Make it your portfolio.</h2><button class="close-dialog" type="button" id="close-editor" aria-label="Close editor">×</button></div>
       <div class="editor-body">
         <p class="editor-intro">Add your details and real work below. Apply changes to preview, then download the updated website to keep them. Nothing is uploaded or published by this editor.</p>
         <h3>01 / Your identity</h3>
@@ -302,28 +302,28 @@
           <label class="field">Headline, line 1<input name="headline1" required maxlength="55"></label>
           <label class="field">Headline, line 2<input name="headline2" required maxlength="55"></label>
           <label class="field full">Short introduction<textarea name="intro" maxlength="450"></textarea></label>
-          <label class="field full">About you<textarea name="about" maxlength="2500" style="min-height:130px"></textarea><small>Use {name} where you want Peshal Kaphle to appear automatically. Only list experience and skills that are yours.</small></label>
+          <label class="field full">About you<textarea name="about" maxlength="2500" style="min-height:130px"></textarea><small>Use {name} where you want Peshal Kaphle to appear automatically. Only line breaks are preserved.</small></label>
           <label class="field">Specialties<input name="specialty" maxlength="200" placeholder="e.g. YouTube videos and social content"></label>
           <label class="field">Your editing software (optional)<input name="tools" maxlength="300" placeholder="List your tools, separated by commas"></label>
         </div>
         <h3>02 / Your showreel</h3>
         <div class="form-grid">
-          <label class="field full">Showreel video link<input name="showreel" inputmode="url" maxlength="2000" placeholder="YouTube, Vimeo, or a direct .mp4 video link"><small>YouTube and Vimeo open in a player. Other secure links open at their source. Local videos may use media/showreel.mp4.</small></label>
-          <label class="field full">Showreel cover image (optional)<span class="image-field-row"><input name="showreelPoster" placeholder="Image URL, or upload below"><button class="clear-image" type="button" data-clear="showreelPoster">Clear</button></span><input type="file" id="showreel-upload" aria-label="Upload showreel cover image" accept="image/jpeg,image/png,image/webp"><small>An uploaded JPEG, PNG, or WebP is embedded in the downloaded HTML. Maximum input size: 5 MB.</small></label>
+          <label class="field full">Showreel video link<input name="showreel" inputmode="url" maxlength="2000" placeholder="YouTube, Vimeo, or a direct .mp4 video link"><small>YouTube and Vimeo open inside the site when allowed.</small></label>
+          <label class="field full">Showreel cover image (optional)<span class="image-field-row"><input name="showreelPoster" placeholder="Image URL, or upload below"><button class="clear-image" type="button" data-clear="showreelPoster">Clear</button></span><input id="showreel-upload" type="file" accept="image/jpeg,image/png,image/webp"></label>
         </div>
         <h3>03 / Your projects</h3>
         <p class="editor-intro">Each project can include your video, cover image, role, and a short description. Blank video links remain clearly labeled sample slots.</p>
         <div id="project-editor"></div>
         <button class="button secondary" type="button" id="add-project">+ Add a project</button>
         <h3>04 / Social profiles (optional)</h3>
-        <div class="form-grid"><label class="field">Instagram<input name="instagram" inputmode="url" maxlength="1000" placeholder="https://www.instagram.com/yourname"></label><label class="field">YouTube channel<input name="youtube" inputmode="url" maxlength="1000" placeholder="https://www.youtube.com/@yourname"></label><label class="field">Vimeo profile<input name="vimeo" inputmode="url" maxlength="1000" placeholder="https://vimeo.com/yourname"></label><label class="field">LinkedIn<input name="linkedin" inputmode="url" maxlength="1000" placeholder="https://www.linkedin.com/in/yourname"></label></div>
-        <label class="check-field"><input type="checkbox" name="draft"><span>Show the starter preview banner. Turn this off when your information is ready. Empty project slots stay labeled even with the banner off.</span></label>
+        <div class="form-grid"><label class="field">Instagram<input name="instagram" inputmode="url" maxlength="1000" placeholder="https://www.instagram.com/yourname"></label><label class="field">YouTube<input name="youtube" inputmode="url" maxlength="1000" placeholder="https://www.youtube.com/@yourname"></label><label class="field">Vimeo<input name="vimeo" inputmode="url" maxlength="1000" placeholder="https://vimeo.com/yourname"></label><label class="field">LinkedIn<input name="linkedin" inputmode="url" maxlength="1000" placeholder="https://www.linkedin.com/in/yourname"></label></div>
+        <label class="check-field"><input type="checkbox" name="draft"><span>Show the starter preview banner. Turn this off when your information is ready. Empty project slots stay labeled even with the banner hidden.</span></label>
         <p class="editor-status" id="editor-status" role="status"></p>
       </div>
-      <div class="editor-actions"><button class="button secondary" id="apply-changes" type="submit">Apply &amp; preview</button><button class="button" type="button" id="download-site">Download updated website <span aria-hidden="true">&#8595;</span></button></div>
+      <div class="editor-actions"><button class="button secondary" id="apply-changes" type="submit">Apply &amp; preview</button><button class="button" type="button" id="download-site">Download updated site</button></div>
     </form>
   </dialog>
-  <noscript><div style="padding:30px;color:#fff;background:#29351d;text-align:center">Please enable JavaScript to view the project gallery and use the portfolio editor. The page layout above remains available.</div></noscript>
+  <noscript><div style="padding:30px;color:#fff;background:#29351d;text-align:center">Please enable JavaScript to view the project gallery and use the portfolio editor. The page layout above remains accessible.</div></noscript>
 
   <!-- EDITABLE CONTENT: use the Edit portfolio button, or edit this JSON directly. -->
   <script type="application/json" id="portfolio-data">
@@ -335,7 +335,7 @@
     "headline1": "Every frame.",
     "headline2": "A feeling.",
     "intro": "Good footage deserves a great story. I bring rhythm, intention, and a little edge to the edit.",
-    "about": "I'm {name}, a video editor focused on turning footage into stories worth watching.\n\nI care about the moments between the cuts: the pace, the sound, and the feeling that stays with you. From the first assembly to the final frame, the story comes first.",
+    "about": "I'm {name}, a video editor focused on turning footage into stories worth watching.\n\nI care about the moments between the cuts: the pace, the sound, and the feeling that stays with you.",
     "specialty": "Video editing & storytelling",
     "tools": [],
     "showreel": "",
@@ -343,10 +343,10 @@
     "draft": true,
     "socials": {"instagram":"", "youtube":"", "vimeo":"", "linkedin":""},
     "projects": [
-      {"title":"Cinematic edit", "category":"Film", "role":"Sample role: editing / color / sound", "description":"Replace this sample with a real project. Explain the brief, your contribution, and the editing choices that shaped the result.", "video":"", "poster":"", "art":"film"},
-      {"title":"Brand story", "category":"Brand", "role":"Sample role: editing / visual storytelling", "description":"Add a brand or commercial project you have permission to share. Describe your exact role without claiming the whole production.", "video":"", "poster":"", "art":"brand"},
-      {"title":"Short-form edit", "category":"Social", "role":"Sample role: pacing / captions / sound", "description":"Add a reel or other short-form edit. Tell visitors how you approached the hook, pace, and sound.", "video":"", "poster":"", "art":"social"},
-      {"title":"Long-form story", "category":"YouTube", "role":"Sample role: structure / editing / sound", "description":"Add a long-form project. Describe how your editing brought clarity, flow, or emotion to the story.", "video":"", "poster":"", "art":"youtube"}
+      {"title":"Cinematic edit", "category":"Film", "role":"Sample role: editing / color / sound", "description":"Replace this sample with a real project. Explain the brief, your contribution, and the result.", "video":"https://www.youtube.com/watch?v=x56hl4BTPE0&t=98s", "poster":"", "art":"film"},
+      {"title":"Brand story", "category":"Brand", "role":"Sample role: editing / visual storytelling", "description":"Add a brand or commercial project you have permission to share. Describe your exact role.", "video":"", "poster":"", "art":"brand"},
+      {"title":"Short-form edit", "category":"Social", "role":"Sample role: pacing / captions / sound", "description":"Add a reel or other short-form edit. Tell visitors how you approached the hook, pace, and clarity.", "video":"", "poster":"", "art":"social"},
+      {"title":"Long-form story", "category":"YouTube", "role":"Sample role: structure / editing / sound", "description":"Add a long-form project. Describe how your editing brought clarity, flow, or emotional weight.", "video":"", "poster":"", "art":"youtube"}
     ]
   }
   </script>
@@ -450,7 +450,7 @@
       const reel = getMedia(data.showreel);
       text('reel-cta',reel ? 'Watch showreel' : 'Showreel preview');
       text('reel-caption',reel ? 'A look inside my editing' : 'Your showreel belongs here');
-      text('reel-caption-note',reel ? 'WATCH THE REEL \u2197' : 'ADD YOUR VIDEO \u2197');
+      text('reel-caption-note',reel ? 'WATCH THE REEL ↗' : 'ADD YOUR VIDEO ↗');
       $('hero-reel').setAttribute('aria-label',reel ? 'Watch showreel' : 'Preview the showreel placeholder');
       const cover = imagePath(data.showreelPoster);
       $('reel-cover').hidden = !cover; $('hero-reel').classList.toggle('has-cover',!!cover);
@@ -463,7 +463,7 @@
       $('social-links').replaceChildren();
       Object.entries(socialNames).forEach(([key,label]) => {
         const url=secureUrl((data.socials || {})[key]);
-        if (url) { const a=document.createElement('a'); a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=label+' \u2197';$('social-links').append(a); }
+        if (url) { const a=document.createElement('a'); a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=label+' ↗';$('social-links').append(a); }
       });
       renderFilters(); renderProjects();
       $('edit-launcher').hidden=!canEdit;
@@ -492,7 +492,7 @@
         const media=getMedia(project.video);const cover=imagePath(project.poster);
         button.setAttribute('aria-label',(media?'View project: ':'Preview sample slot: ')+project.title);
         const poster=document.createElement('div');poster.className='poster';
-        if(cover){const img=document.createElement('img');img.className='poster-image';img.src=cover;img.alt=project.title+' - cover image';img.loading='lazy';img.decoding='async';img.addEventListener('error',()=>{img.remove();poster.prepend(makeArt(project.art));addSampleLabel(poster,'COVER UNAVAILABLE');});poster.append(img);}
+        if(cover){const img=document.createElement('img');img.className='poster-image';img.src=cover;img.alt=project.title+' - cover image';img.loading='lazy';img.decoding='async';img.addEventListener('error',()=>img.remove());poster.append(img);}
         else poster.append(makeArt(project.art));
         if(!media || !cover) addSampleLabel(poster,media?'TEMPLATE COVER':'SAMPLE PROJECT');
         const play=document.createElement('span');play.className='project-play';play.setAttribute('aria-hidden','true');play.innerHTML=playIcon;poster.append(play);
@@ -504,7 +504,7 @@
         article.append(button,meta);$('work-grid').append(article);
       });
       const samples=data.projects.some(p=>!getMedia(p.video));
-      text('work-note',samples?'Sample slots are marked. Replace them with your own work.':data.projects.some(p=>!imagePath(p.poster))?'Template covers are marked. Project videos are linked.':'Selected projects. Every cut has a reason.');
+      text('work-note',samples?'Sample slots are marked. Replace them with your own work.':data.projects.some(p=>!imagePath(p.poster))?'Template covers are marked. Project videos are linked.':'Selected work is ready.');
       text('filter-status','Showing '+projects.length+' '+(projects.length===1?'project':'projects')+(activeFilter==='All work'?'':' in '+activeFilter)+'.');
     }
     function makeArt(key) {
@@ -522,9 +522,9 @@
     function closeDialog(dialog) { if(dialog.open)dialog.close(); }
     function makeEmpty(title,message,link) {
       const box=document.createElement('div');box.className='empty-video';
-      const icon=document.createElement('div');icon.className='empty-icon';icon.textContent='\u25b7';icon.setAttribute('aria-hidden','true');
+      const icon=document.createElement('div');icon.className='empty-icon';icon.textContent='▷';icon.setAttribute('aria-hidden','true');
       const heading=document.createElement('h3');heading.textContent=title;const p=document.createElement('p');p.textContent=message;box.append(icon,heading,p);
-      if(link){const a=document.createElement('a');a.className='button';a.href=link;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open video \u2197';box.append(a);}
+      if(link){const a=document.createElement('a');a.className='button';a.href=link;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open video ↗';box.append(a);}
       return box;
     }
     function openProject(project) {
@@ -537,7 +537,7 @@
         $('video-original').href=media.original;
         if(media.type==='iframe'){
           const box=makeEmpty('Ready when you are.','Load this video from '+media.provider+'. Playback connects to that external service.');
-          const load=document.createElement('button');load.type='button';load.className='button';load.textContent='Load video \u25b7';box.append(load);stage.append(box);
+          const load=document.createElement('button');load.type='button';load.className='button';load.textContent='Load video ▷';box.append(load);stage.append(box);
           load.addEventListener('click',()=>{
             const iframe=document.createElement('iframe');iframe.src=media.src;iframe.title=project.title+' video player';
             iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';iframe.allowFullscreen=true;
@@ -547,7 +547,7 @@
         } else if(media.type==='video') {
           const video=document.createElement('video');video.controls=true;video.playsInline=true;video.preload='metadata';video.src=media.src;
           const poster=imagePath(project.poster);if(poster)video.poster=poster;
-          video.addEventListener('error',()=>{stage.replaceChildren(makeEmpty('This video could not be loaded.','Check that the video file exists, the format is supported, and this URL is accessible.',media.original));});
+          video.addEventListener('error',()=>{stage.replaceChildren(makeEmpty('This video could not be loaded.','Check that the video file exists, the format is supported, and this URL is accessible.'));});
           stage.append(video);
         } else {
           stage.append(makeEmpty('Watch this project at its source.','This link opens on its original website. YouTube, Vimeo, and direct MP4 or WebM links can play inside this portfolio.',media.original));
@@ -555,14 +555,14 @@
       }
       openDialog($('video-dialog'));
     }
-    function openShowreel(){openProject({title:'Showreel',video:data.showreel,poster:data.showreelPoster,description:getMedia(data.showreel)?'A look inside my editing.':'Add your showreel link in Edit portfolio. The current image is original template artwork, not a frame from your work.'});}
+    function openShowreel(){openProject({title:'Showreel',video:data.showreel,poster:data.showreelPoster,description:getMedia(data.showreel)?'A look inside my editing.':'Add your showreel link in Edit portfolio.'});}
     $('hero-reel').addEventListener('click',openShowreel);$('showreel-button').addEventListener('click',openShowreel);
     $('close-video').addEventListener('click',()=>closeDialog($('video-dialog')));
     $('close-editor').addEventListener('click',()=>closeDialog($('editor')));
     [$('video-dialog'),$('editor')].forEach(dialog=>{
       dialog.addEventListener('close',()=>{if(!document.querySelector('dialog[open]'))document.body.classList.remove('modal-open');if(dialog===$('video-dialog'))$('video-stage').replaceChildren();});
       // Close only a backdrop click, not a click inside the dialog rectangle.
-      dialog.addEventListener('click',event=>{const r=dialog.getBoundingClientRect();if(event.target===dialog&&(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom))closeDialog(dialog);});
+      dialog.addEventListener('click',event=>{const r=dialog.getBoundingClientRect();if(event.target===dialog&&(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom))dialog.close();});
     });
     $('menu-toggle').addEventListener('click',()=>{const open=$('menu-toggle').getAttribute('aria-expanded')!=='true';$('menu-toggle').setAttribute('aria-expanded',String(open));$('nav-links').classList.toggle('is-open',open);});
     function closeMenu(){$('menu-toggle').setAttribute('aria-expanded','false');$('nav-links').classList.remove('is-open');}
@@ -637,7 +637,8 @@
       if(!next.name||!next.headline1||!next.headline2){text('editor-status','Enter Peshal Kaphle and both headline lines.');return null;}
       next.tools=String(values.get('tools')||'').split(',').map(s=>s.trim()).filter(Boolean);next.draft=!!values.get('draft');next.socials={};
       for(const key of Object.keys(socialNames)){
-        const value=String(values.get(key)||'').trim();if(value&&!secureUrl(value)){text('editor-status','Use a complete https:// link for '+socialNames[key]+'.');form.elements[key].focus();return null;}next.socials[key]=value;
+        const value=String(values.get(key)||'').trim();if(value&&!secureUrl(value)){text('editor-status','Use a complete https:// link for '+socialNames[key]+'.');form.elements[key].focus();return null;}
+        next.socials[key]=value;
       }
       if(next.email&&!cleanEmail(next.email)){text('editor-status','Enter a valid contact email.');form.elements.email.focus();return null;}
       if(next.showreel&&!getMedia(next.showreel)){text('editor-status','Use a secure video URL or a relative .mp4 / .webm / .ogv path for the showreel.');form.elements.showreel.focus();return null;}
